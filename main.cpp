@@ -4,7 +4,7 @@
 
 int main() {
     Data trainData(true, 1719692);
-    trainData.read("../data/train.txt");
+    trainData.read("data/train.txt");
 
     RandomForest randomForest(100, "gini", "log2", -1, 150, 1, 1000000, 8);
 
@@ -14,6 +14,6 @@ int main() {
     testData.read("../data/test.txt");
 
     auto results = randomForest.predictProba(testData);
-    writeDataToCSV(results, testData, "../results/trainResults.csv", false);
+    writeDataToCSV(results, testData, "results/trainResults.csv", false);
     return 0;
 }
